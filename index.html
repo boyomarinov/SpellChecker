@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Spellcheck experiment</title>
+
+    <link href="styles/main.css" rel="stylesheet">
+
+    <script type="text/javascript" src="src/bktree.js" ></script>
+    <script type="text/javascript" src="src/stopwatch.js" ></script>
+    <script type="text/javascript" src="src/spell-checker.js" ></script>
+    <script type="text/javascript" src="src/app.js" ></script>
+</head>
+<body>
+    <!--<div>-->
+        <!--<input type="text" id="word-input" />-->
+    <!--</div>-->
+
+    <div>
+        <textarea id="spellcheck-input" rows="15" cols="150" ></textarea>
+        <button id="check-button" type="button">Check</button>
+    </div>
+    <div id="results-container">
+        <div id="loading"></div>
+        <div id="stopwatch-placeholder"></div>
+    </div>
+
+</body>
+</html>
