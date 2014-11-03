@@ -18,17 +18,20 @@ var spellChecker = (function () {
     }
 
     function checkTerm (term) {
+        var deferred = Q.defer();
         var results = tree.search(term, 2);
         if (containsProp(results, term)) {
-            return 1;
+            deferred.resolve(1);
+        } else {
+            var keys = Object.keys(results);
+            if (keys.length > suggestionsCount) {
+                deferred.resolve(keys.slice(0, suggestionsCount));
+            } else {
+                deferred.resolve(keys);
+            }
         }
 
-        var keys = Object.keys(results);
-        if (keys. length > suggestionsCount) {
-            return keys.slice(0, suggestionsCount);
-        }
-
-        return Object.keys(results);
+        return deferred.promise;
     }
 
     function containsProp(obj, term) {
