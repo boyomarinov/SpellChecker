@@ -8,13 +8,13 @@ window.onload = function () {
         previousContent = '';
 
     document.getElementById('check-button').onclick = function () {
-//        var word = document.getElementById('word-input').value;
-//        console.log(spellChecker.check(word));
+        // var word = document.getElementById('word-input').value;
+        // console.log(spellChecker.check(word));
         handleInput();
     }
 
     function handleInput() {
-        loading.style.display = "inline-block";
+        // loading.style.display = "inline-block";
         stopwatch.start();
 
         var content = textElem.value,
